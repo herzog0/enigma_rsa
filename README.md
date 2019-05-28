@@ -13,7 +13,7 @@ source venv/bin/activate
 
 Entre na pasta:
 ```
-/private_conversation_sender
+/private_conversation/sender
 ```
 E, no console do python3, importe o sender:
 
