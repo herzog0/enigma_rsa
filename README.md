@@ -1,5 +1,5 @@
 # enigma_rsa
-##Simulação de conversa com proteção contra ataques MITM
+## Simulação de conversa com proteção contra ataques MITM
 
 Certifique-se de que você possui python 3 instalado!
 
@@ -40,13 +40,13 @@ python3
 
 No console aberto na pasta sender, importe o módulo correspondente com o comando:
 ```bash
-import sender
+>> import sender
 ```
 
 Ao fazer esta importação, você receberá a seguinte mensagem:
 ```sender
-Copie e cole a linha a seguir: 
-from sender import encrypt, get_hash, get_sign, send, helpme, public_s, private_s, public_r
+>> Copie e cole a linha a seguir: 
+>> from sender import encrypt, get_hash, get_sign, send, helpme, public_s, private_s, public_r
 ```
 
 Este passo é importante para facilitar o uso das funções que o programa fornece, retirando a necessidade de usar o prefixo 'sender.' antes do uso de qualquer função.
@@ -78,7 +78,7 @@ Você pode ver quais chaves estão disponíveis para sua utilização com o coma
 
 Agora cabe a você fazer os próximos passos e garantir o nível de segurança desejado!
 
-Por fim, execute o comando 'send(<msg>, opt: <sign>)' para enviar a mensagem ao receiver e, opcionalmente, uma assinatura.
+Por fim, execute o comando 'send(\<msg\>, opt: \<sign\>)' para enviar a mensagem ao receiver e, opcionalmente, uma assinatura.
 
 ## Receiver
 
