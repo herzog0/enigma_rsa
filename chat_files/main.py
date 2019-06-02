@@ -46,8 +46,8 @@ def initialize_conversation():
     print(colored("\nAgora ative o ambinte virtual com 'source env/bin/activate'", "green"))
     print("\nApós o ambiente estar ativado, entre na pasta "+ colored("private_conversation/sender", "blue") + ", inicie o console do python3 e importe o sender, siga as instruções e envie uma mensagem.")
     print("Ela será recebida na pasta " + colored("private_conversation/receiver/\n", "blue"))
-    print("Você deve iniciar o console do python3 na pasta do receiver e importar o módulo, assim como antes.\n")
-
+    print("Você deve iniciar o console do python3 na pasta do receiver e importar o módulo, assim como antes.")
+    print(colored("Em caso de dúvida leia o README!\n", "red"))
 
 if __name__ == "__main__":
     initialize_conversation()

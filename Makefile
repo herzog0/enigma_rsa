@@ -29,3 +29,12 @@ prepare:
 		. ./$(VIRTUAL_ENV)/bin/activate; \
 		python3 ./chat_files/main.py; \
 	fi
+
+reboot:
+	if test ! -d "$(VIRTUAL_ENV)"; then \
+	       exit 2; \
+      	fi	       
+	if test -d "chat_files"; then \
+		. ./$(VIRTUAL_ENV)/bin/activate; \
+		python3 chat_files/main.py; \
+	fi

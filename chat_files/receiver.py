@@ -1,12 +1,17 @@
-from Crypto.PublicKey import RSA
-from Crypto.Cipher import PKCS1_OAEP
-from Crypto.Signature import PKCS1_v1_5
-from Crypto.Hash import SHA256
-
 from base64 import b64decode
-from termcolor import colored
 
 import sys
+
+
+try:
+    from Crypto.PublicKey import RSA
+    from Crypto.Cipher import PKCS1_OAEP
+    from Crypto.Signature import PKCS1_v1_5
+    from Crypto.Hash import SHA256
+    from termcolor import colored
+except ModuleNotFoundError:
+    print("\nVocê lembrou de rodar o comando 'make install' na pasta raiz do programa?\n")
+    sys.exit()
 
 
 def __import_warning():
@@ -58,11 +63,11 @@ def helpme():
     print("")
     print(colored("Você é ", "red") + colored("receiver", "yellow"))
     print(colored("Você pode usar as funções: ", "red"))
-    print(colored("decrypt(<msg>, <priv_key>)", "cyan") + " -> decripta uma mensagem com sua chave privada")
-    print(colored("verify(<msg>, <pub_s_key>, <sign>)", "cyan") + " -> "
-                                                                  "verifica se a mensagem foi alterada a partir de "
-                                                                  "uma assinatura e da chave pública de quem a "
-                                                                  "assinou")
+    print(colored("decrypt(<msg>, <key>)", "cyan") + " -> decripta uma mensagem com a chave desejada")
+    print(colored("verify(<msg>, opt: <key>, opt: <sign>)", "cyan") + " -> "
+                                                                  "verifica a consistência da mensagem" 
+                                                                  "através de uma assinatura opcional" 
+                                                                  "e uma chave opcional")
     print(colored("get_message()", "cyan") + " -> retorna a mensagem contida na pasta ou nulo")
     print(colored("get_signature()", "cyan") + " -> retorna a assinatura contida na pasta ou nulo")
 

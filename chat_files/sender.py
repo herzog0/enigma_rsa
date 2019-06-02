@@ -1,12 +1,18 @@
-from Crypto.PublicKey import RSA
-from Crypto.Cipher import PKCS1_OAEP
-from Crypto.Signature import PKCS1_v1_5
-from Crypto.Hash import SHA256
 from base64 import b64encode
-from termcolor import colored
 import random
 
 import sys
+
+
+try:
+    from Crypto.PublicKey import RSA
+    from Crypto.Cipher import PKCS1_OAEP
+    from Crypto.Signature import PKCS1_v1_5
+    from Crypto.Hash import SHA256
+    from termcolor import colored
+except ModuleNotFoundError:
+    print("\nVocê lembrou de rodar o comando 'make install' na pasta raiz do programa?\n")
+    sys.exit()
 
 
 def __import_warning():
@@ -38,9 +44,9 @@ def helpme():
     print("")
     print(colored("Você é ", "red") + colored("sender", "yellow"))
     print(colored("Você pode usar as funções: ", "red"))
-    print(colored("encrypt(<msg>, <pub_key>)", "cyan") + " -> encripta uma mensagem com a chave pública")
+    print(colored("encrypt(<msg>, <key>)", "cyan") + " -> encripta uma mensagem com a chave desejada")
     print(colored("get_hash(<msg>)", "cyan") + " -> retorna um hash da mensagem")
-    print(colored("get_sign(<hash>, <priv_key>)", "cyan") + " -> gera a assinatura a partir do hash e chave privada")
+    print(colored("get_sign(<hash>, <key>)", "cyan") + " -> gera a assinatura a partir do hash e alguma chave")
     print(colored("send(<msg>, opt: <sign>)", "cyan") + " -> envia a mensagem e, opcionalmente, uma assinatura")
     print(colored("public_s", "cyan") + " -> sua chave pública")
     print(colored("private_s", "cyan") + " -> sua chave privada")
